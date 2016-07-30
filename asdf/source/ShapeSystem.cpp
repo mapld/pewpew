@@ -1,4 +1,4 @@
-#include "ShapeSystem.h"
+#include "../header/ShapeSystem.h"
 
 void ShapeSystem::addComponent(Entity e, SDL_Rect r, SDL_Color c)
 {

@@ -1,8 +1,7 @@
 #include <SDL.h>
 #include <assert.h>
 
-#include "GraphicsSettings.h"
-#include "World.h"
+#include "../header/World.h" 
 
 // Sets up initial world entities
 void initWorld(World* world)

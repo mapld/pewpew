@@ -19,15 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="ShapeSystem.cpp" />
+    <ClInclude Include="header\Entity.h" />
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="EntityManager.h" />
-    <ClInclude Include="GraphicsSettings.h" />
-    <ClInclude Include="ShapeSystem.h" />
-    <ClInclude Include="World.h" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ShapeSystem.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26FE73AB-961B-4B8F-944B-61992E46B111}</ProjectGuid>
