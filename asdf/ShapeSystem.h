@@ -6,7 +6,7 @@
 #include "GraphicsSettings.h"
 
 
-// System for primitive shape components rendered using the basic SDL rendering
+// System for primitive shape components. Rendered using the basic SDL rendering
 class ShapeSystem
 {
 public:
