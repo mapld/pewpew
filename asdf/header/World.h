@@ -16,16 +16,9 @@ public:
 		shapeSystem = ShapeSystem(renderer);
 	}
 
-	void Draw()
-	{
-		SDL_Color bgColor = graphicsSettings.backgroundColor;
-		SDL_SetRenderDrawColor(renderer, bgColor.r, bgColor.g, bgColor.b, bgColor.a);
-		SDL_RenderClear(renderer);
+	void draw();
 
-		shapeSystem.draw();
-
-		SDL_RenderPresent(renderer);
-	}
+	void update();
 
 	SDL_Window* window;
 	GraphicsSettings graphicsSettings;

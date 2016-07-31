@@ -3,12 +3,22 @@
 
 #include "../header/World.h" 
 
-// Sets up initial world entities
-void initWorld(World* world)
+Entity createSquare(World& world, int x, int y)
 {
-	Entity e = world->entityManager.createEntity();
-	assert(world->entityManager.alive(e));
-	world->shapeSystem.addComponent(e, { 100,50,50,50 }, world->graphicsSettings.defaultSquareColor);
+	Entity e = world.entityManager.createEntity();
+	assert(world.entityManager.alive(e));
+	world.shapeSystem.addComponent(e, { x,y,50,50 }, world.graphicsSettings.defaultSquareColor);
+	return e;
+}
+
+// Sets up initial world entities
+void initWorld(World& world)
+{
+	Entity s1 = createSquare(world, 50, 50);
+
+	Entity s2 = createSquare(world, 150, 50);
+	world.entityManager.deleteEntity(s2);
+	assert(!world.entityManager.alive(s2));
 }
 
 int main(int argc, char* args[])
@@ -36,12 +46,17 @@ int main(int argc, char* args[])
 			World* world = new World(window,gSettings);
 
 			// Add initial entities to the world
-			initWorld(world);
+			initWorld(*world);
 
 			// Put loop here
-			world->Draw();
+			world->draw();
 
-			SDL_Delay(4000);
+			SDL_Delay(2000);
+
+			world->update();
+			world->draw();
+
+			SDL_Delay(2000);
 
 			// Free everything 
 			delete world;
