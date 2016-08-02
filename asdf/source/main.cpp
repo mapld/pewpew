@@ -7,7 +7,7 @@ Entity createSquare(World& world, int x, int y)
 {
 	Entity e = world.entityManager.createEntity();
 	assert(world.entityManager.alive(e));
-	world.shapeSystem.addComponent(e, { x,y,50,50 }, world.graphicsSettings.defaultSquareColor);
+	world.shapeSystem.add(e, { x,y,50,50 }, world.graphicsSettings.defaultSquareColor);
 	return e;
 }
 

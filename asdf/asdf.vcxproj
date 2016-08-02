@@ -23,6 +23,7 @@
     <ClInclude Include="header\EntityManager.h" />
     <ClInclude Include="header\GraphicsSettings.h" />
     <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Transform.h" />
     <ClInclude Include="header\World.h" />
   </ItemGroup>
   <ItemGroup>

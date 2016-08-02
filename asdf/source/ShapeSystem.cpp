@@ -1,7 +1,7 @@
 #include "../header/ShapeSystem.h"
 #include <algorithm>
 
-void ShapeSystem::addComponent(Entity e, SDL_Rect r, SDL_Color c)
+void ShapeSystem::add(Entity e, SDL_Rect r, SDL_Color c)
 {
 	_data.n++;
 	_data.rects.push_back(r);
@@ -33,7 +33,7 @@ ShapeSystem::Shape ShapeSystem::getComponent(Entity e)
 }
 
 
-void ShapeSystem::destroyComponent(Entity e)
+void ShapeSystem::destroy(Entity e)
 {
 	unsigned i = _map[e];
 	unsigned end = _data.n - 1;
@@ -50,10 +50,6 @@ void ShapeSystem::destroyComponent(Entity e)
 	_data.n--;
 }
 
-ShapeSystem::Data* ShapeSystem::getData()
-{
-	return &_data;
-}
 
 void ShapeSystem::cleanUp(const EntityManager& em)
 {
@@ -64,7 +60,7 @@ void ShapeSystem::cleanUp(const EntityManager& em)
 		Entity e = _data.entities[i];
 		if (!em.alive(e))
 		{
-			destroyComponent(e);
+			destroy(e);
 		}
 	}
 }

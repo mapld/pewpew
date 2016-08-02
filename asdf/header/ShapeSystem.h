@@ -28,9 +28,8 @@ public:
 	ShapeSystem(SDL_Renderer* renderer) { _renderer = renderer; }
 
 	void draw();
-	Data* getData();
-	void addComponent(Entity, SDL_Rect = { 0,0,0,0 }, SDL_Color = { 0, 0 , 0, 0 });
-	void destroyComponent(Entity);
+	void add(Entity, SDL_Rect = { 0,0,0,0 }, SDL_Color = { 0, 0 , 0, 0 });
+	void destroy(Entity);
 	Shape getComponent(Entity);
 
 	void cleanUp(const EntityManager&);
