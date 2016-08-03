@@ -10,9 +10,11 @@ public:
 	struct Data
 	{
 		std::vector<glm::vec3> positions;
+        std::vector<Entity> entities;
 	};
 
 	Transform() {}
+
 	void add(Entity, glm::vec3 pos = glm::vec3(0,0,0));
 	void destroy(Entity);
 
@@ -24,4 +26,5 @@ public:
 
 private:
 	Data _data;
+    //todo: map
 };

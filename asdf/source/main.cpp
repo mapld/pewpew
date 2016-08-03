@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <assert.h>
+#include <stdio.h>
 
 #include "../header/World.h" 
 
@@ -35,7 +36,7 @@ int main(int argc, char* args[])
 	}
 	else
 	{
-		window = SDL_CreateWindow("ASDF", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, gSettings.screenWidth, gSettings.screenHeight, SDL_WINDOW_SHOWN);
+		window = SDL_CreateWindow("PEWPEW", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, gSettings.screenWidth, gSettings.screenHeight, SDL_WINDOW_SHOWN);
 		if (window == NULL)
 		{
 			printf("Failed to create window. SDL_Error: %s\n", SDL_GetError());

@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ShapeSystem.cpp" />
+    <ClCompile Include="source\Transform.cpp" />
     <ClCompile Include="source\World.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
