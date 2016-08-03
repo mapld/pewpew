@@ -22,5 +22,6 @@ public:
 	// garbage collector that will slowly destroy components of destroyed entities
 	void gc(const EntityManager&);
 
+private:
 	Data _data;
 };
