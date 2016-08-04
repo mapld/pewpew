@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <unordered_map>
 #include <glm/vec3.hpp>
 #include "Entity.h" 
 #include "EntityManager.h"
@@ -11,6 +12,7 @@ public:
 	{
 		std::vector<glm::vec3> positions;
         std::vector<Entity> entities;
+        unsigned n = 0;
 	};
 
 	Transform() {}
@@ -26,5 +28,7 @@ public:
 
 private:
 	Data _data;
-    //todo: map
+    std::unordered_map<Entity,unsigned> _map;
+    unsigned gcn;
+
 };

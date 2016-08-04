@@ -5,15 +5,29 @@ void ShapeSystem::add(Entity e, SDL_Rect r, SDL_Color c)
 {
 	_data.n++;
 	_data.rects.push_back(r);
+	_data.tRects.push_back(r);
 	_data.colors.push_back(c);
 	_data.entities.push_back(e);
 	_map[e] = _data.colors.size() - 1;
 }
 
+void ShapeSystem::updatePositions(Transform& transformSystem)
+{
+    for(unsigned i = 0; i < _data.n;i++)
+    {
+        Entity e = _data.entities[i]; 
+        glm::vec3 vec = transformSystem.getPosition(e);
+        SDL_Rect rect = _data.rects[i];
+        rect.x = rect.x + vec.x * _scale; 
+        rect.y = rect.y + vec.y * _scale; 
+        _data.tRects[i] = rect;
+    }
+}
+
 void ShapeSystem::draw()
 {
-	std::vector<SDL_Rect>::const_iterator rit = _data.rects.begin();
-	std::vector<SDL_Rect>::const_iterator rend = _data.rects.end();
+	std::vector<SDL_Rect>::const_iterator rit = _data.tRects.begin();
+	std::vector<SDL_Rect>::const_iterator rend = _data.tRects.end();
 	std::vector<SDL_Color>::const_iterator cit = _data.colors.begin();
 	for (;rit != rend; rit++,cit++)
 	{
@@ -40,6 +54,9 @@ void ShapeSystem::destroy(Entity e)
 
 	_data.rects[i] = _data.rects[end];
 	_data.rects.pop_back();
+
+	_data.tRects[i] = _data.tRects[end];
+	_data.tRects.pop_back();
 
 	_data.colors[i] = _data.colors[end];
 	_data.colors.pop_back();

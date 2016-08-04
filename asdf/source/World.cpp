@@ -2,6 +2,9 @@
 
 void World::update()
 {
+    shapeSystem.updatePositions(transformSystem);
+
+    transformSystem.gc(entityManager);
 	shapeSystem.cleanUp(entityManager);
 }
 

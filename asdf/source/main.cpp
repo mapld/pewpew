@@ -1,14 +1,16 @@
 #include <SDL.h>
 #include <assert.h>
 #include <stdio.h>
+#include <glm/vec3.hpp>
 
 #include "../header/World.h" 
 
-Entity createSquare(World& world, int x, int y)
+Entity createSquare(World& world, double x, double y)
 {
 	Entity e = world.entityManager.createEntity();
 	assert(world.entityManager.alive(e));
-	world.shapeSystem.add(e, { x,y,50,50 }, world.graphicsSettings.defaultSquareColor);
+    world.transformSystem.add(e,glm::vec3(x,y,0.0));
+	world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
 	return e;
 }
 
@@ -16,10 +18,19 @@ Entity createSquare(World& world, int x, int y)
 void initWorld(World& world)
 {
 	Entity s1 = createSquare(world, 50, 50);
+	assert(world.entityManager.alive(s1));
 
 	Entity s2 = createSquare(world, 150, 50);
+
+    world.update();
+    world.draw();
+
+    SDL_Delay(2000);
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
+
+    world.update();
+    world.draw();
 }
 
 int main(int argc, char* args[])
@@ -48,14 +59,6 @@ int main(int argc, char* args[])
 
 			// Add initial entities to the world
 			initWorld(*world);
-
-			// Put loop here
-			world->draw();
-
-			SDL_Delay(2000);
-
-			world->update();
-			world->draw();
 
 			SDL_Delay(2000);
 
