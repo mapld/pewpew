@@ -78,6 +78,8 @@ int main(int argc, char* args[])
                     case SDLK_q:
                       quit = true;
                       break;
+                    default:
+                      quit = false;
                     }
                 }
             }

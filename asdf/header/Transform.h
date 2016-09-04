@@ -2,7 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <glm/vec3.hpp>
-#include "Entity.h" 
+#include "Entity.h"
 #include "EntityManager.h"
 
 class Transform
