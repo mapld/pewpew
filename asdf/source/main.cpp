@@ -3,13 +3,14 @@
 #include <stdio.h>
 #include <glm/vec3.hpp>
 
-#include "../header/World.h" 
+#include "../header/World.h"
 
 Entity createSquare(World& world, double x, double y)
 {
 	Entity e = world.entityManager.createEntity();
+
 	assert(world.entityManager.alive(e));
-    world.transformSystem.add(e,glm::vec3(x,y,0.0));
+  world.transformSystem.add(e,glm::vec3(x,y,0.0));
 	world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
 	return e;
 }
@@ -21,16 +22,17 @@ void initWorld(World& world)
 	assert(world.entityManager.alive(s1));
 
 	Entity s2 = createSquare(world, 150, 50);
+  std::string blah;
 
-    world.update();
-    world.draw();
+  world.update();
+  world.draw();
 
-    SDL_Delay(2000);
+  SDL_Delay(2000);
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
 
-    world.update();
-    world.draw();
+  world.update();
+  world.draw();
 }
 
 int main(int argc, char* args[])
@@ -54,15 +56,29 @@ int main(int argc, char* args[])
 		}
 		else
 		{
-			// Create the world and all its systems. 
+			// Create the world and all its systems.
 			World* world = new World(window,gSettings);
 
 			// Add initial entities to the world
+
 			initWorld(*world);
 
-			SDL_Delay(2000);
+      // Event handler
+      SDL_Event e;
 
-			// Free everything 
+      bool quit = false;
+      while(quit == false)
+        {
+          while(SDL_PollEvent(&e) != 0)
+            {
+              if(e.type == SDL_QUIT)
+                {
+                  quit = true;
+                }
+            }
+        }
+
+			// Free everything
 			delete world;
 		}
 	}
