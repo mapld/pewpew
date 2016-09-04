@@ -24,15 +24,9 @@ void initWorld(World& world)
 	Entity s2 = createSquare(world, 150, 50);
   std::string blah;
 
-  world.update();
-  world.draw();
-
-  SDL_Delay(2000);
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
 
-  world.update();
-  world.draw();
 }
 
 int main(int argc, char* args[])
@@ -69,11 +63,22 @@ int main(int argc, char* args[])
       bool quit = false;
       while(quit == false)
         {
+          world->update();
+          world->draw();
           while(SDL_PollEvent(&e) != 0)
             {
               if(e.type == SDL_QUIT)
                 {
                   quit = true;
+                }
+              else if(e.type == SDL_KEYDOWN)
+                {
+                  switch(e.key.keysym.sym)
+                    {
+                    case SDLK_q:
+                      quit = true;
+                      break;
+                    }
                 }
             }
         }
