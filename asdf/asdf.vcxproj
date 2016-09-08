@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,18 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\Entity.h" />
-    <ClInclude Include="header\EntityManager.h" />
-    <ClInclude Include="header\GraphicsSettings.h" />
-    <ClInclude Include="header\ShapeSystem.h" />
-    <ClInclude Include="header\Transform.h" />
-    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\*.h" />
+    <ClInclude Include="header\*.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\ShapeSystem.cpp" />
-    <ClCompile Include="source\Transform.cpp" />
-    <ClCompile Include="source\World.cpp" />
+    <ClCompile Include="src\*.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26FE73AB-961B-4B8F-944B-61992E46B111}</ProjectGuid>

@@ -10,7 +10,7 @@ Entity createSquare(World& world, double x, double y)
 	Entity e = world.entityManager.createEntity();
 
 	assert(world.entityManager.alive(e));
-  world.transformSystem.add(e,glm::vec3(x,y,0.0));
+    world.transformSystem.add(e,glm::vec3(x,y,0.0));
 	world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
 	return e;
 }
@@ -79,7 +79,8 @@ int main(int argc, char* args[])
                       quit = true;
                       break;
                     default:
-                      quit = false;
+						quit = false;
+                      //world->inputHandler.handleKeyEvent(e.key);
                     }
                 }
             }
