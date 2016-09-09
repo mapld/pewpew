@@ -23,15 +23,16 @@ public:
   struct Key
   {
     SDL_Scancode code;
-    SDL_Keymod mod;
+    Uint16 mod;
 
     Key(){}
-    Key(SDL_Scancode scode, SDL_Keymod smod){code = scode, mod = smod;}
-    bool operator<(const Key& rhs)
+    Key(SDL_Scancode scode, Uint16 smod){code = scode, mod = smod;}
+
+    bool operator<(const Key& rhs) const
     {
       return std::tie(code,mod) < std::tie(rhs.code, rhs.mod);
     }
-    bool operator==(const Key& rhs)
+    bool operator==(const Key& rhs) const
     {
       return std::tie(code,mod) == std::tie(rhs.code, rhs.mod);
     }

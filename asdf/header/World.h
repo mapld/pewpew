@@ -15,6 +15,7 @@ public:
 		window = w;
 		graphicsSettings = gs;
 
+    inputHandler = InputHandler();
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     transformSystem = Transform();
 		shapeSystem = ShapeSystem(renderer);

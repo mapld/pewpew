@@ -79,9 +79,9 @@ int main(int argc, char* args[])
                       quit = true;
                       break;
                     default:
-						quit = false;
-                      //world->inputHandler.handleKeyEvent(e.key);
-                    }
+                      InputHandler::Key iKey = InputHandler::Key(e.key.keysym.scancode,e.key.keysym.mod);
+                      world->inputHandler.bindKey(A_RIGHT,iKey);
+                  }
                 }
             }
         }
