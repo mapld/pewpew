@@ -10,9 +10,9 @@ Entity createSquare(World& world, double x, double y)
 	Entity e = world.entityManager.createEntity();
 
 	assert(world.entityManager.alive(e));
-    world.transformSystem.add(e,glm::vec3(x,y,0.0));
-	world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
-	return e;
+  world.transformSystem.add(e,glm::vec3(x,y,0.0));
+  world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
+  return e;
 }
 
 // Sets up initial world entities
