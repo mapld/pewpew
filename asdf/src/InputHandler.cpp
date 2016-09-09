@@ -16,3 +16,7 @@ void InputHandler::bindKey(Action action,Key key)
     }
   _keymap[key] = action;
 }
+
+void InputHandler::handleKeyEvent(SDL_KeyboardEvent)
+{
+}
