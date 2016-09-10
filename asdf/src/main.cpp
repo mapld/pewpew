@@ -27,6 +27,8 @@ void initWorld(World& world)
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
 
+  InputHandler::Key iKey = InputHandler::Key(SDL_SCANCODE_C,0);
+  world.inputHandler.bindKey(A_RIGHT,iKey);
 }
 
 int main(int argc, char* args[])
@@ -71,7 +73,7 @@ int main(int argc, char* args[])
                 {
                   quit = true;
                 }
-              else if(e.type == SDL_KEYDOWN)
+              else if(e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
                 {
                   switch(e.key.keysym.sym)
                     {
@@ -79,8 +81,7 @@ int main(int argc, char* args[])
                       quit = true;
                       break;
                     default:
-                      InputHandler::Key iKey = InputHandler::Key(e.key.keysym.scancode,e.key.keysym.mod);
-                      world->inputHandler.bindKey(A_RIGHT,iKey);
+                      world->inputHandler.handleKeyEvent(e.key);
                   }
                 }
             }

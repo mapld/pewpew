@@ -56,7 +56,7 @@ public:
 
 
 private:
-  bool _actionDown[A_SIZE];
+  bool _actionDown[A_SIZE] = {};
   std::map<Key,Action> _keymap;
 
   Action _actionAwaitingMap = A_NONE;
