@@ -12,14 +12,14 @@ void Transform::destroy(Entity e)
 {
     assert(_map.find(e) != _map.end());
     unsigned i = _map[e];
-    unsigned end = _data.n - 1; 
-     
+    unsigned end = _data.n - 1;
+
     _data.positions[i] = _data.positions[end];
     _data.positions.pop_back();
 
     _data.entities[i] = _data.entities[end];
     _data.entities.pop_back();
-    
+
     _data.n--;
 }
 
@@ -27,13 +27,14 @@ glm::vec3 Transform::getPosition(Entity e)
 {
     assert(_map.find(e) != _map.end());
     unsigned i = _map[e];
-    return _data.positions[i];      
+    return _data.positions[i];
 }
 
 void Transform::setPosition(Entity e, glm::vec3 v)
 {
     assert(_map.find(e) != _map.end());
     unsigned i = _map[e];
+    _data.positions[i] = v;
 }
 
 void Transform::gc(const EntityManager& em)
@@ -50,7 +51,7 @@ void Transform::gc(const EntityManager& em)
         {
             destroy(e);
         }
-        gcn++; 
+        gcn++;
     }
 }
 

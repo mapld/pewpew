@@ -6,16 +6,18 @@ class PlayerController
 {
 public:
   PlayerController(){};
-  PlayerController(Transform* t){ transformSystem = t; curEntity = e;}
+  PlayerController(Transform* t){ transformSystem = t; moveSpeed = 0.03f;}
 
-  // Set player
+  // Set player entity
 
   // Takes input and does things
-  void pollInput(const InputHandler&);
+  void update(InputHandler&);
+
+  void setEntity(Entity e);
 
 
 private:
   Transform* transformSystem;
   Entity curEntity;
-  double moveSpeed = 0.1;
+  float moveSpeed;
 };

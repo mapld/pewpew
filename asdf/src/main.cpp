@@ -19,6 +19,7 @@ Entity createSquare(World& world, double x, double y)
 void initWorld(World& world)
 {
 	Entity s1 = createSquare(world, 50, 50);
+  world.playerController.setEntity(s1);
 	assert(world.entityManager.alive(s1));
 
 	Entity s2 = createSquare(world, 150, 50);
@@ -27,8 +28,11 @@ void initWorld(World& world)
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
 
-  InputHandler::Key iKey = InputHandler::Key(SDL_SCANCODE_C,0);
-  world.inputHandler.bindKey(A_RIGHT,iKey);
+
+  world.inputHandler.bindKey(A_RIGHT,InputHandler::Key(SDL_SCANCODE_D,0));
+  world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));
+  world.inputHandler.bindKey(A_DOWN,InputHandler::Key(SDL_SCANCODE_S,0));
+  world.inputHandler.bindKey(A_UP,InputHandler::Key(SDL_SCANCODE_W,0));
 }
 
 int main(int argc, char* args[])
@@ -65,8 +69,6 @@ int main(int argc, char* args[])
       bool quit = false;
       while(quit == false)
         {
-          world->update();
-          world->draw();
           while(SDL_PollEvent(&e) != 0)
             {
               if(e.type == SDL_QUIT)
@@ -85,6 +87,8 @@ int main(int argc, char* args[])
                   }
                 }
             }
+          world->update();
+          world->draw();
         }
 
 			// Free everything

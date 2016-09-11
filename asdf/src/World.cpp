@@ -2,10 +2,11 @@
 
 void World::update()
 {
-    shapeSystem.updatePositions(transformSystem);
+  playerController.update(inputHandler);
+  shapeSystem.updatePositions(transformSystem);
 
-    transformSystem.gc(entityManager);
-	shapeSystem.cleanUp(entityManager);
+  transformSystem.gc(entityManager);
+  shapeSystem.cleanUp(entityManager);
 }
 
 void World::draw()
