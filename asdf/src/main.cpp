@@ -87,6 +87,9 @@ int main(int argc, char* args[])
                     case SDLK_q:
                       quit = true;
                       break;
+                    case SDLK_b:
+                      world->inputHandler.bindKeyToNext(A_RIGHT);
+					  break;
                     default:
                       world->inputHandler.handleKeyEvent(e.key);
                   }
