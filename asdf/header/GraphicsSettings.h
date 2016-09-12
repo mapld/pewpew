@@ -9,6 +9,7 @@ struct GraphicsSettings
 	int screenHeight;
 	SDL_Color backgroundColor;
 	SDL_Color defaultSquareColor;
+  float scale;
 
 	GraphicsSettings()
 	{
@@ -17,6 +18,7 @@ struct GraphicsSettings
 		screenHeight = 720;
 		backgroundColor = { 255,0,255,255 };
 		defaultSquareColor = { 255,255,0,255 };
+    scale = 10.0f;
 	}
 };
 #endif

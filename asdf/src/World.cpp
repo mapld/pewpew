@@ -1,8 +1,8 @@
 #include "../header/World.h"
 
-void World::update()
+void World::update(Uint32 deltaTime)
 {
-  playerController.update(inputHandler);
+  playerController.update(inputHandler, deltaTime);
   shapeSystem.updatePositions(transformSystem);
 
   transformSystem.gc(entityManager);

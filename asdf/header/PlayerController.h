@@ -6,12 +6,12 @@ class PlayerController
 {
 public:
   PlayerController(){};
-  PlayerController(Transform* t){ transformSystem = t; moveSpeed = 0.03f;}
+  PlayerController(Transform* t){ transformSystem = t; moveSpeed = 50.0f;}
 
   // Set player entity
 
   // Takes input and does things
-  void update(InputHandler&);
+  void update(InputHandler&, Uint32 deltaTime);
 
   void setEntity(Entity e);
 

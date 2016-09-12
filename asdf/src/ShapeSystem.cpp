@@ -13,13 +13,14 @@ void ShapeSystem::add(Entity e, SDL_Rect r, SDL_Color c)
 
 void ShapeSystem::updatePositions(Transform& transformSystem)
 {
+    float scale = _graphicsSettings->scale;
     for(unsigned i = 0; i < _data.n;i++)
     {
-        Entity e = _data.entities[i]; 
+        Entity e = _data.entities[i];
         glm::vec3 vec = transformSystem.getPosition(e);
         SDL_Rect rect = _data.rects[i];
-        rect.x = rect.x + vec.x * _scale; 
-        rect.y = rect.y + vec.y * _scale; 
+        rect.x = rect.x + vec.x * scale;
+        rect.y = rect.y + vec.y * scale;
         _data.tRects[i] = rect;
     }
 }

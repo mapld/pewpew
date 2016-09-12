@@ -66,7 +66,12 @@ int main(int argc, char* args[])
       // Event handler
       SDL_Event e;
 
+      Uint32 framesPerSecond = 60;
+      Uint32 timePerFrame = 1000 / framesPerSecond;
+
       bool quit = false;
+
+      Uint32 prevTime = SDL_GetTicks();
       while(quit == false)
         {
           while(SDL_PollEvent(&e) != 0)
@@ -86,9 +91,19 @@ int main(int argc, char* args[])
                       world->inputHandler.handleKeyEvent(e.key);
                   }
                 }
+              else
+                {
+                  printf("Unrecognized SDL event");
+                }
             }
-          world->update();
-          world->draw();
+          Uint32 curTime = SDL_GetTicks();
+          Uint32 deltaTime = curTime - prevTime;
+          if ( (deltaTime) > timePerFrame)
+            {
+              prevTime = curTime;
+              world->update(deltaTime);
+              world->draw();
+            }
         }
 
 			// Free everything

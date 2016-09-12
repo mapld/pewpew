@@ -1,7 +1,7 @@
 #include "../header/PlayerController.h"
 #include <glm/glm.hpp>
 
-void PlayerController::update(InputHandler& inputHandler)
+void PlayerController::update(InputHandler& inputHandler, Uint32 deltaTime)
 {
   glm::vec3 movement = glm::vec3(0.0,0.0,0.0);
   if(inputHandler.isActionDown(A_RIGHT))
@@ -14,7 +14,7 @@ void PlayerController::update(InputHandler& inputHandler)
     }
   if(inputHandler.isActionDown(A_DOWN))
     {
-      movement += glm::vec3(0.0,1.0,0.0);
+     movement += glm::vec3(0.0,1.0,0.0);
     }
   if(inputHandler.isActionDown(A_UP))
     {
@@ -25,7 +25,7 @@ void PlayerController::update(InputHandler& inputHandler)
 	  return;
   }
   movement = glm::normalize(movement);
-  movement = moveSpeed * movement;
+  movement = moveSpeed * deltaTime / 1000 * movement;
   transformSystem->setPosition(curEntity,transformSystem->getPosition(curEntity) + movement);
 }
 

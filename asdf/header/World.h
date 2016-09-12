@@ -19,13 +19,13 @@ public:
     inputHandler = InputHandler();
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     transformSystem = Transform();
-    shapeSystem = ShapeSystem(renderer);
+    shapeSystem = ShapeSystem(renderer, &graphicsSettings);
     playerController = PlayerController(&transformSystem);
 	}
 
 	void draw();
 
-	void update();
+	void update(Uint32 deltaTime);
 
   InputHandler inputHandler;
   Transform transformSystem;
