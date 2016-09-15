@@ -6,6 +6,7 @@
 #include "Transform.h"
 #include "InputHandler.h"
 #include "PlayerController.h"
+#include "Spawner.h"
 
 // Contains all of the systems for a game's world. This is game specific but could be reused for multiple levels of a game
 class World
@@ -21,6 +22,7 @@ public:
     transformSystem = Transform();
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
     playerController = PlayerController(&transformSystem);
+    spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings);
 	}
 
 	void draw();
@@ -36,4 +38,5 @@ public:
 
   EntityManager entityManager;
   ShapeSystem shapeSystem;
+  Spawner spawnerSystem;
 };

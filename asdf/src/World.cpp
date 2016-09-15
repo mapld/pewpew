@@ -2,6 +2,8 @@
 
 void World::update(Uint32 deltaTime)
 {
+  spawnerSystem.update(deltaTime);
+
   playerController.update(inputHandler, deltaTime);
   shapeSystem.updatePositions(transformSystem);
 

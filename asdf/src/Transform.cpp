@@ -14,13 +14,21 @@ void Transform::destroy(Entity e)
     unsigned i = _map[e];
     unsigned end = _data.n - 1;
 
-    _data.positions[i] = _data.positions[end];
-    _data.positions.pop_back();
-
     _data.entities[i] = _data.entities[end];
     _data.entities.pop_back();
 
+    _data.positions[i] = _data.positions[end];
+    _data.positions.pop_back();
+
     _data.n--;
+
+	if (i < _data.n)
+	{
+		_map[_data.entities[i]] = i;
+	}
+
+
+	_map.erase(e);
 }
 
 glm::vec3 Transform::getPosition(Entity e)
@@ -42,7 +50,10 @@ void Transform::gc(const EntityManager& em)
     unsigned num_check = 5;
     // todo: change this to random?
     if ( gcn > _data.n) gcn = 0;
-    if ( gcn + num_check > _data.n) num_check = _data.n - gcn;
+	if (gcn + num_check >= _data.n)
+	{
+		num_check = _data.n - gcn;
+	}
 
     for (unsigned i = 0; i < num_check; i++)
     {
@@ -50,6 +61,7 @@ void Transform::gc(const EntityManager& em)
         if (!em.alive(e))
         {
             destroy(e);
+			num_check--;
         }
         gcn++;
     }

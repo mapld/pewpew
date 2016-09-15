@@ -5,14 +5,15 @@
 
 #include "../header/World.h"
 
-Entity createSquare(World& world, double x, double y)
+Entity createSquare(World& world, float x, float y)
 {
-	Entity e = world.entityManager.createEntity();
+	// Entity e = world.entityManager.createEntity();
 
-	assert(world.entityManager.alive(e));
-  world.transformSystem.add(e,glm::vec3(x,y,0.0));
-  world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
-  return e;
+	// assert(world.entityManager.alive(e));
+  // world.transformSystem.add(e,glm::vec3(x,y,0.0));
+  // world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
+  // return e;
+  return world.spawnerSystem.createSquare(x,y,{222,22,2,255});
 }
 
 // Sets up initial world entities
@@ -33,6 +34,8 @@ void initWorld(World& world)
   world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));
   world.inputHandler.bindKey(A_DOWN,InputHandler::Key(SDL_SCANCODE_S,0));
   world.inputHandler.bindKey(A_UP,InputHandler::Key(SDL_SCANCODE_W,0));
+
+  world.spawnerSystem.start();
 }
 
 int main(int argc, char* args[])
