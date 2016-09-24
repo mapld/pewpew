@@ -11,8 +11,8 @@ public:
 	struct Data
 	{
 		std::vector<glm::vec3> positions;
-        std::vector<Entity> entities;
-        unsigned n = 0;
+    std::vector<Entity> entities;
+    unsigned n = 0;
 	};
 
 	Transform() {}

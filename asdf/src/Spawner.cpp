@@ -1,4 +1,5 @@
 #include "../header/Spawner.h"
+#include "../header/Random.h"
 
 
 void Spawner::update(Uint32 deltaTime)
@@ -16,8 +17,8 @@ void Spawner::update(Uint32 deltaTime)
 
 void Spawner::spawnSquare()
 {
-  float x = 20.0f;
-  float y = 20.0f;
+  float x = alrm_random::floatInRange(5.0f,50.0f);
+  float y = alrm_random::floatInRange(5.0f,50.0f);
   createSquare(x,y,_graphicsSettings->defaultSquareColor);
 }
 
