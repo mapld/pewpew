@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -23,7 +23,13 @@
     <ClInclude Include="header\*.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\*.cpp" />
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26FE73AB-961B-4B8F-944B-61992E46B111}</ProjectGuid>

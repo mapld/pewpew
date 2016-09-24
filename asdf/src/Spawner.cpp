@@ -1,6 +1,6 @@
 #include "../header/Spawner.h"
 #include "../header/Random.h"
-
+#include <glm/glm.hpp>
 
 void Spawner::update(Uint32 deltaTime)
 {
@@ -17,9 +17,17 @@ void Spawner::update(Uint32 deltaTime)
 
 void Spawner::spawnSquare()
 {
-  float x = alrm_random::floatInRange(5.0f,50.0f);
-  float y = alrm_random::floatInRange(5.0f,50.0f);
-  createSquare(x,y,_graphicsSettings->defaultSquareColor);
+  using namespace alrm_random;
+
+  float x = floatInRange(5.0f,50.0f);
+  float y = floatInRange(5.0f,50.0f);
+  Entity square = createSquare(x,y,_graphicsSettings->defaultSquareColor);
+
+  float speed = 5.0f;
+  float vx = floatInRange(-1.0f,1.0f);
+  float vy = floatInRange(-1.0f,1.0f);
+  glm::vec3 velocity = speed * glm::normalize(glm::vec3(vx,vy,0.0f));
+  _transformSystem->setVelocity(square, velocity);
 }
 
 Entity Spawner::createSquare(float x, float y, SDL_Color color)

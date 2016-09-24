@@ -18,37 +18,224 @@
     <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\EntityManager.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\GraphicsSettings.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\ShapeSystem.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\World.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\Transform.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\InputHandler.h">
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
+    <ClInclude Include="header\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\EntityManager.h" />
+    <ClInclude Include="header\GraphicsSettings.h" />
+    <ClInclude Include="header\InputHandler.h" />
+    <ClInclude Include="header\PlayerController.h" />
+    <ClInclude Include="header\Random.h" />
+    <ClInclude Include="header\SDL.h" />
+    <ClInclude Include="header\ShapeSystem.h" />
+    <ClInclude Include="header\Spawner.h" />
+    <ClInclude Include="header\Transform.h" />
+    <ClInclude Include="header\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\main.cpp">
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\ShapeSystem.cpp">
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\World.cpp">
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Transform.cpp">
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="src\.#Spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\playercontroller.cpp" />
+    <ClCompile Include="src\ShapeSystem.cpp" />
+    <ClCompile Include="src\Spawner.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
 </Project>
