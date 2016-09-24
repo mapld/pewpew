@@ -2,22 +2,25 @@
 #include "Entity.h"
 #include <vector>
 #include <queue>
+#include <assert.h>
 
+// This defines minimum number of available deleted entities before any entity number will be re-used
 const int MIN_QUEUE_LENGTH = 1024;
 
-// Keeps track of entities. 
-// TODO: delete entity capability
+// Keeps track of entities.
 class EntityManager
 {
 public:
 	EntityManager(){ };
-	Entity createEntity() 
+
+	Entity createEntity()
 	{
 		unsigned id;
 		if (_repeatQueue.size() < MIN_QUEUE_LENGTH)
 		{
 			_repeatCount.push_back(0);
 			id = _repeatCount.size() - 1;
+      assert(id < INDEX_MAX);
 		}
 		else
 		{
@@ -37,6 +40,7 @@ public:
 	void deleteEntity(Entity e)
 	{
 		unsigned i = e.getIndex();
+    assert(i < _repeatCount.size());
 		_repeatCount[i]++;
 		_repeatQueue.push(i);
 	}

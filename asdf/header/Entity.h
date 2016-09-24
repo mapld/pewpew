@@ -8,13 +8,13 @@ const int INDEX_BITMASK = ( 1 << INDEX_BITS ) - 1;
 const int REPEAT_BITS = 8;
 const int REPEAT_BITMASK = ( 1 << REPEAT_BITS ) - 1;
 
-// Representation of an Entity 
+// Representation of an Entity
 struct Entity
 {
 	unsigned id;
 
-    unsigned getIndex() { return (id & INDEX_BITMASK); }
-    unsigned getRepeat() { return ( ( id >> INDEX_BITS ) & REPEAT_BITMASK); }
+  unsigned getIndex() { return (id & INDEX_BITMASK); }
+  unsigned getRepeat() { return ( ( id >> INDEX_BITS ) & REPEAT_BITMASK); }
 
 	bool operator==(Entity e) const
 	{

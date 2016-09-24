@@ -99,7 +99,7 @@ int main(int argc, char* args[])
                 }
               else
                 {
-                  printf("Unrecognized SDL event");
+                  printf("Unrecognized SDL event %d \n", e.type);
                 }
             }
           Uint32 curTime = SDL_GetTicks();

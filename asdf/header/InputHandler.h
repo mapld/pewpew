@@ -5,6 +5,7 @@
 #include <map>
 #include <tuple>
 
+// Possible actions that the game accepts
 enum Action
   {
     A_NONE,
@@ -17,6 +18,7 @@ enum Action
   };
 
 
+// This class is meant to translate keybinds into actions that the game accepts
 class InputHandler
 {
 public:
@@ -28,6 +30,7 @@ public:
     Key(){}
     Key(SDL_Scancode scode, Uint16 smod){code = scode, mod = smod;}
 
+    // Operations necessary for using std map
     bool operator<(const Key& rhs) const
     {
       return std::tie(code,mod) < std::tie(rhs.code, rhs.mod);

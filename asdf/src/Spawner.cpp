@@ -8,6 +8,7 @@ void Spawner::update(Uint32 deltaTime)
 
   curTime += deltaTime;
 
+  // spawn new objects on a fixed interval
   if (curTime > spawnInterval)
     {
       spawnSquare();
@@ -15,6 +16,7 @@ void Spawner::update(Uint32 deltaTime)
     }
 }
 
+// Spawns a square with a random location and velocity
 void Spawner::spawnSquare()
 {
   using namespace alrm_random;

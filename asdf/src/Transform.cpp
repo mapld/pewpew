@@ -36,16 +36,16 @@ void Transform::destroy(Entity e)
 
 glm::vec3 Transform::getPosition(Entity e)
 {
-    assert(_map.find(e) != _map.end());
-    unsigned i = _map[e];
-    return _data.positions[i];
+  assert(_map.find(e) != _map.end());
+  unsigned i = _map[e];
+  return _data.positions[i];
 }
 
 void Transform::setPosition(Entity e, glm::vec3 v)
 {
-    assert(_map.find(e) != _map.end());
-    unsigned i = _map[e];
-    _data.positions[i] = v;
+  assert(_map.find(e) != _map.end());
+  unsigned i = _map[e];
+  _data.positions[i] = v;
 }
 
 glm::vec3 Transform::getVelocity(Entity e)
@@ -64,9 +64,11 @@ void Transform::setVelocity(Entity e, glm::vec3 v)
 
 void Transform::gc(const EntityManager& em)
 {
-    unsigned num_check = 5;
-    // todo: change this to random?
-    if ( gcn > _data.n) gcn = 0;
+  unsigned num_check = 5;
+
+  // todo: change this to use randomness?
+  if ( gcn > _data.n) gcn = 0;
+
 	if (gcn + num_check >= _data.n)
 	{
 		num_check = _data.n - gcn;

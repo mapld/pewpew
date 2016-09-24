@@ -27,7 +27,12 @@ void InputHandler::handleKeyEvent(SDL_KeyboardEvent kbe)
     }
 
   auto search = _keymap.find(key);
-  if(search == _keymap.end()) return;
+  if(search == _keymap.end())
+    {
+      printf("No key binding for key with code %d \n",key.code);
+      return;
+    }
+
   Action act = search->second;
   if(kbe.type == SDL_KEYDOWN)
     {

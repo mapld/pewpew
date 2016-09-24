@@ -35,7 +35,7 @@ public:
 
 private:
 	Data _data;
-    std::unordered_map<Entity,unsigned> _map;
-    unsigned gcn;
+  std::unordered_map<Entity,unsigned> _map;
+  unsigned gcn;
 
 };
