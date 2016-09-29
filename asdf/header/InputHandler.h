@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include "Entity.h"
+#include <stdio.h>
 #include <vector>
 #include <map>
 #include <tuple>
