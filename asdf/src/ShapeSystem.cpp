@@ -1,15 +1,25 @@
 #include "../header/ShapeSystem.h"
 #include <algorithm>
 
+SDL_Rect scaleRect(SDL_Rect r, float scale)
+{
+  r.x = scale * r.x;
+  r.y = scale * r.y;
+  r.w = scale * r.w;
+  r.h = scale * r.h;
+  return r;
+}
+
 void ShapeSystem::add(Entity e, SDL_Rect r, SDL_Color c)
 {
   _data.n++;
   _data.rects.push_back(r);
-  _data.tRects.push_back(r);
+  _data.tRects.push_back(scaleRect(r, _graphicsSettings->scale));
   _data.colors.push_back(c);
   _data.entities.push_back(e);
   _map[e] = _data.colors.size() - 1;
 }
+
 
 void ShapeSystem::updatePositions(Transform& transformSystem)
 {
@@ -18,7 +28,7 @@ void ShapeSystem::updatePositions(Transform& transformSystem)
   {
       Entity e = _data.entities[i];
       glm::vec3 vec = transformSystem.getPosition(e);
-      SDL_Rect rect = _data.rects[i];
+      SDL_Rect rect = scaleRect(_data.rects[i], scale);
       rect.x = rect.x + (vec.x * scale);
       rect.y = rect.y + (vec.y * scale);
       _data.tRects[i] = rect;

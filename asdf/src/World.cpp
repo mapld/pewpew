@@ -8,6 +8,7 @@ void World::update(Uint32 deltaTime)
 
   playerController.update(inputHandler, deltaTime);
   shapeSystem.updatePositions(transformSystem);
+  collisionSystem.updateCollisions(deltaTime);
 
   transformSystem.gc(entityManager);
   shapeSystem.cleanUp(entityManager);

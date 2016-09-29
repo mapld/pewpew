@@ -7,6 +7,7 @@
 #include "InputHandler.h"
 #include "PlayerController.h"
 #include "Spawner.h"
+#include "Collision.h"
 
 // Contains all of the systems for a game's world. This is game specific but could be reused for multiple levels of a game
 class World
@@ -20,6 +21,7 @@ public:
     inputHandler = InputHandler();
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     transformSystem = Transform();
+    collisionSystem = Collision(&transformSystem);
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
     playerController = PlayerController(&transformSystem);
     spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings);
@@ -35,6 +37,7 @@ public:
   SDL_Window* window;
   SDL_Renderer* renderer;
   PlayerController playerController;
+  Collision collisionSystem;
 
   EntityManager entityManager;
   ShapeSystem shapeSystem;

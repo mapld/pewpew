@@ -7,12 +7,6 @@
 
 Entity createSquare(World& world, float x, float y)
 {
-	// Entity e = world.entityManager.createEntity();
-
-	// assert(world.entityManager.alive(e));
-  // world.transformSystem.add(e,glm::vec3(x,y,0.0));
-  // world.shapeSystem.add(e, { 0,0,50,50 }, world.graphicsSettings.defaultSquareColor);
-  // return e;
   return world.spawnerSystem.createSquare(x,y,{222,22,2,255});
 }
 
@@ -28,7 +22,6 @@ void initWorld(World& world)
 
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));
-
 
   world.inputHandler.bindKey(A_RIGHT,InputHandler::Key(SDL_SCANCODE_D,0));
   world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));

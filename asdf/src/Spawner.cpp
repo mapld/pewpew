@@ -38,6 +38,6 @@ Entity Spawner::createSquare(float x, float y, SDL_Color color)
 
 	assert(_entityManager->alive(e));
   _transformSystem->add(e,glm::vec3(x,y,0.0));
-  _shapeSystem->add(e, { 0,0,50,50 }, color);
+  _shapeSystem->add(e, { 0,0, 4,4}, color);
   return e;
 }
