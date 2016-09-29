@@ -1,2 +1,2 @@
-test:
-	clang++ -std=c++11 -stdlib=libc++ source/* -I/mnt/c/vs_dev_lib/include -Isource/ -o a.out `sdl2-config --cflags --libs`
+all:
+	g++ src/*.cpp -ID:\dev\SDL_32\include\SDL2 -ID:\dev -LD:\dev\SDL_32\lib -lmingw32 -lSDL2main -lSDL2 -std=c++11 -o pewpew
