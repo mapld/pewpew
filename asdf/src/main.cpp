@@ -18,7 +18,6 @@ void initWorld(World& world)
 	assert(world.entityManager.alive(s1));
 
 	Entity s2 = createSquare(world, 150, 50);
-  std::string blah;
 
 	world.entityManager.deleteEntity(s2);
 	assert(!world.entityManager.alive(s2));

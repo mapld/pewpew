@@ -2,6 +2,7 @@
 
 void Transform::add(Entity e, glm::vec3 pos, glm::vec3 vel)
 {
+  assert(_map.find(e) == _map.end());
     _data.entities.push_back(e);
     _data.positions.push_back(pos);
     _data.velocities.push_back(vel);
