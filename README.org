@@ -1,0 +1,4 @@
+
+This is a simple game I'm working on in C++ using entity-component system as basis. Depends on SDL 2.0 and the glm math library. 
+
+Getting better at C/C++ as I go, so coding patterns will probably be pretty inconsistent across the project.
