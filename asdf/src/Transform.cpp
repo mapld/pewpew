@@ -38,7 +38,7 @@ void Transform::destroy(Entity e)
 
 glm::vec3 Transform::getPosition(Entity e)
 {
-  printf("Getting position of entity %d \n", e);
+  // printf("Getting position of entity %d \n", e);
   assert(_map.find(e) != _map.end());
   unsigned i = _map[e];
   return _data.positions[i];

@@ -33,9 +33,10 @@ public:
 	// garbage collector that will slowly destroy components of destroyed entities
 	void gc(const EntityManager&);
 
+
 private:
-	Data _data;
   std::unordered_map<Entity,unsigned> _map;
+	Data _data;
   unsigned gcn;
 
 };

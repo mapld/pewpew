@@ -4,6 +4,7 @@
 
 void Spawner::update(Uint32 deltaTime)
 {
+  if(!started) return;
   curTime += deltaTime;
 
   // spawn new objects on a fixed interval

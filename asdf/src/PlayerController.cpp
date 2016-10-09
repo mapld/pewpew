@@ -20,13 +20,12 @@ void PlayerController::update(InputHandler& inputHandler, Uint32 deltaTime)
     {
       movement += glm::vec3(0.0,-1.0,0.0);
     }
-  if (glm::length(movement) == 0)
+  if (glm::length(movement) != 0)
   {
-	  return;
+    movement = glm::normalize(movement);
+    movement = moveSpeed * movement;
   }
-  movement = glm::normalize(movement);
-  movement = moveSpeed * deltaTime / 1000 * movement;
-  transformSystem->setPosition(curEntity,transformSystem->getPosition(curEntity) + movement);
+  transformSystem->setVelocity(curEntity,movement);
 }
 
 void PlayerController::setEntity(Entity e)

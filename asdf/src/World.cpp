@@ -3,12 +3,12 @@
 void World::update(Uint32 deltaTime)
 {
   spawnerSystem.update(deltaTime);
+  playerController.update(inputHandler, deltaTime);
 
   transformSystem.update(deltaTime);
-
-  playerController.update(inputHandler, deltaTime);
-  shapeSystem.updatePositions(transformSystem);
   collisionSystem.updateCollisions(deltaTime);
+
+  shapeSystem.updatePositions(transformSystem);
 
   transformSystem.gc(entityManager);
   shapeSystem.cleanUp(entityManager);

@@ -17,7 +17,7 @@ void initWorld(World& world)
   world.playerController.setEntity(s1);
 	assert(world.entityManager.alive(s1));
 
-	// Entity s2 = createSquare(world, 150, 50);
+	Entity s2 = createSquare(world, 70, 40);
 
 	// world.entityManager.deleteEntity(s2);
 	// assert(!world.entityManager.alive(s2));
