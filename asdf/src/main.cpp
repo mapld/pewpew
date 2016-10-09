@@ -17,10 +17,10 @@ void initWorld(World& world)
   world.playerController.setEntity(s1);
 	assert(world.entityManager.alive(s1));
 
-	Entity s2 = createSquare(world, 150, 50);
+	// Entity s2 = createSquare(world, 150, 50);
 
-	world.entityManager.deleteEntity(s2);
-	assert(!world.entityManager.alive(s2));
+	// world.entityManager.deleteEntity(s2);
+	// assert(!world.entityManager.alive(s2));
 
   world.inputHandler.bindKey(A_RIGHT,InputHandler::Key(SDL_SCANCODE_D,0));
   world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));

@@ -24,7 +24,7 @@ public:
     collisionSystem = Collision(&transformSystem);
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
     playerController = PlayerController(&transformSystem);
-    spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings);
+    spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings, &collisionSystem);
 	}
 
 	void draw();
