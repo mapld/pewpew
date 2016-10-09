@@ -89,17 +89,25 @@ public:
                     glm::vec3 oldpos2 = _data.prevPos[index2];
                     glm::vec3 vel2 = pos2 - oldpos2;
                     printf("velocity2: (%f,%f)\n", vel2.x, vel2.y);
-                    if(vel2.x * distance.x > 0)
+                    distance.x = (vel2.x > 0) ? pos1.x - br2.x : pos2.x - br1.x ;
+                    distance.y = (vel2.y > 0) ? pos1.y - br2.y : pos2.y - br1.y ;
+                    distance = -1.0f * distance;
+                    printf("distance: (%f,%f)\n", distance.x, distance.y);
+                    if(distance.x < distance.y)
                       {
-                        newDelta1.x = distance.x;
+                        if(vel2.x > 0)
+                          newDelta1.x += distance.x;
+                        else
+                          newDelta1.x -= distance.x;
                       }
                     else
                       {
-                        newDelta1.y = distance.y;
+                        if(vel2.y > 0)
+                          newDelta1.y += distance.y;
+                        else
+                          newDelta1.y -= distance.y;
                       }
                   }
-
-
 
                 newpos = oldpos1 + newDelta1;
                 // printf("old position: (%f , %f)\n", oldpos1.x, oldpos1.y);
