@@ -26,6 +26,7 @@ void PlayerController::update(InputHandler& inputHandler, Uint32 deltaTime)
     movement = moveSpeed * movement;
   }
   transformSystem->setVelocity(curEntity,movement);
+
 }
 
 void PlayerController::setEntity(Entity e)

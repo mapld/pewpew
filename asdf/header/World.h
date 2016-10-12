@@ -21,7 +21,7 @@ public:
     inputHandler = InputHandler();
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     transformSystem = Transform();
-    collisionSystem = Collision(&transformSystem);
+    collisionSystem = Collision(&transformSystem, &entityManager);
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
     playerController = PlayerController(&transformSystem);
     spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings, &collisionSystem);

@@ -19,13 +19,14 @@ void initWorld(World& world)
 
 	Entity s2 = createSquare(world, 70, 40);
 
-	// world.entityManager.deleteEntity(s2);
-	// assert(!world.entityManager.alive(s2));
+	world.entityManager.deleteEntity(s2);
+	assert(!world.entityManager.alive(s2));
 
   world.inputHandler.bindKey(A_RIGHT,InputHandler::Key(SDL_SCANCODE_D,0));
   world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));
   world.inputHandler.bindKey(A_DOWN,InputHandler::Key(SDL_SCANCODE_S,0));
   world.inputHandler.bindKey(A_UP,InputHandler::Key(SDL_SCANCODE_W,0));
+  world.inputHandler.bindKey(A_SHOOT, InputHandler::Key(SDL_SCANCODE_J,0));
 
   world.spawnerSystem.start();
 }
