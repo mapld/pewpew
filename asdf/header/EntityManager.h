@@ -11,7 +11,8 @@ const int MIN_QUEUE_LENGTH = 1024;
 class EntityManager
 {
 public:
-	EntityManager(){ };
+  // Push one on beginning so we can null check entities
+	EntityManager(){ _repeatCount.push_back(0); };
 
 	Entity createEntity()
 	{

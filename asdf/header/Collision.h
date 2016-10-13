@@ -1,22 +1,28 @@
 #pragma once
 #include "Transform.h"
+#include "EntityManager.h"
+
 #include <glm/vec3.hpp>
 #include <vector>
 #include <stdio.h>
 #include <glm/glm.hpp>
-#include "EntityManager.h"
 
 class Collision
 {
 public:
   Collision(){};
-  Collision(Transform* transformSystem, EntityManager* entityManager){ _transformSystem = transformSystem; _em = entityManager;};
+  Collision(Transform* transformSystem, EntityManager* entityManager)
+  {
+    _transformSystem = transformSystem;
+    _em = entityManager;
+  };
 
   struct Data
   {
     std::vector<Entity> entities;
     std::vector<glm::vec3> sizes;
     std::vector<glm::vec3> prevPos;
+    std::vector<Entity> collisions;
     unsigned n = 0;
   };
 
@@ -26,6 +32,7 @@ public:
     _data.entities.push_back(e);
     _data.sizes.push_back(size);
     _data.prevPos.push_back(_transformSystem->getPosition(e));
+    _data.collisions.push_back({0});
     _data.n++;
     _map[e] = _data.n - 1;
   }
@@ -68,8 +75,14 @@ public:
       }
   }
 
+  Entity getCollision(Entity e)
+  {
+    return _data.collisions[_map[e]];
+  }
+
   void updateCollisions(Uint32 deltaTime)
   {
+    memset(&_data.collisions[0],0,sizeof(Entity)*_data.collisions.size());
     // Starting with a dumb n^2 solution
     // TODO: buckets / grid
     // TODO: rigidbody by sorting the array
@@ -99,6 +112,7 @@ public:
             if ((pos1.x < br2.x && br1.x > pos2.x) && (pos1.y < br2.y && br1.y > pos2.y))
               {
                 printf("Collision detected\n");
+                _data.collisions[index1] = ent2;
 
                 glm::vec3 vel1 = _transformSystem->getVelocity(ent1);
                 printf("velocity: (%f,%f)\n", vel1.x, vel1.y);
