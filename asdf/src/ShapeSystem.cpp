@@ -1,4 +1,4 @@
-#include "../header/ShapeSystem.h"
+#include "../include/ShapeSystem.h"
 #include <algorithm>
 
 SDL_Rect scaleRect(SDL_Rect r, float scale)

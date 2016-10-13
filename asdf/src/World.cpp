@@ -1,4 +1,4 @@
-#include "../header/World.h"
+#include "../include/World.h"
 
 void World::update(Uint32 deltaTime)
 {

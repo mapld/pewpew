@@ -1,4 +1,4 @@
-#include "../header/Transform.h"
+#include "../include/Transform.h"
 #include <stdio.h>
 
 void Transform::add(Entity e, glm::vec3 pos, glm::vec3 vel)

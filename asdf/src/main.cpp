@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <glm/vec3.hpp>
 
-#include "../header/World.h"
+#include "../include/World.h"
 
 Entity createSquare(World& world, float x, float y)
 {

@@ -1,4 +1,4 @@
-#include "../header/PlayerController.h"
+#include "../include/PlayerController.h"
 #include <glm/glm.hpp>
 
 void PlayerController::update(InputHandler& inputHandler, Uint32 deltaTime)

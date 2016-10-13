@@ -1,4 +1,4 @@
-#include "../header/InputHandler.h"
+#include "../include/InputHandler.h"
 
 // possibly more effective to just store two maps, one for each direction
 void InputHandler::bindKey(Action action,Key key)

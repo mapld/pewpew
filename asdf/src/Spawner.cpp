@@ -1,5 +1,5 @@
-#include "../header/Spawner.h"
-#include "../header/Random.h"
+#include "../include/Spawner.h"
+#include "../include/Random.h"
 #include <glm/glm.hpp>
 
 void Spawner::update(Uint32 deltaTime)
