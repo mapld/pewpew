@@ -113,6 +113,7 @@ public:
               {
                 printf("Collision detected\n");
                 _data.collisions[index1] = ent2;
+                _data.collisions[index2] = ent1;
 
                 glm::vec3 vel1 = _transformSystem->getVelocity(ent1);
                 printf("velocity: (%f,%f)\n", vel1.x, vel1.y);
