@@ -1,4 +1,5 @@
 #include <SDL.h>
+#undef main
 #include <assert.h>
 #include <stdio.h>
 #include <glm/vec3.hpp>
@@ -31,7 +32,7 @@ void initWorld(World& world)
   world.spawnerSystem.start();
 }
 
-int main(int argc, char* args[])
+int main()
 {
 	// Init graphics setings.
 	GraphicsSettings gSettings;
@@ -56,7 +57,6 @@ int main(int argc, char* args[])
 			World* world = new World(window,gSettings);
 
 			// Add initial entities to the world
-
 			initWorld(*world);
 
       // Event handler
@@ -84,8 +84,8 @@ int main(int argc, char* args[])
                       quit = true;
                       break;
                     case SDLK_b:
-                      world->inputHandler.bindKeyToNext(A_RIGHT);
-					  break;
+                      world->inputHandler.bindNextAction();
+                      break;
                     default:
                       world->inputHandler.handleKeyEvent(e.key);
                   }
@@ -111,5 +111,5 @@ int main(int argc, char* args[])
 	}
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-	return 0;
+  return 0;
 }

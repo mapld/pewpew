@@ -17,6 +17,10 @@ void InputHandler::bindKey(Action action,Key key)
   _keymap[key] = action;
 }
 
+void InputHandler::bindNextAction(){
+  mapNextAction = true;
+}
+
 void InputHandler::handleKeyEvent(SDL_KeyboardEvent kbe)
 {
   Key key = Key(kbe.keysym.scancode,kbe.keysym.mod);
@@ -34,7 +38,11 @@ void InputHandler::handleKeyEvent(SDL_KeyboardEvent kbe)
     }
 
   Action act = search->second;
-  if(kbe.type == SDL_KEYDOWN)
+  if(mapNextAction){
+    bindKeyToNext(act);
+    mapNextAction = false;
+  }
+  else if(kbe.type == SDL_KEYDOWN)
     {
       _actionDown[act] = true;
     }

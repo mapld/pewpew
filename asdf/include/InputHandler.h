@@ -51,6 +51,9 @@ public:
   // Will bind the action to the key
   void bindKey(Action,Key);
 
+  // Will rebind the action associated with the next key pressed
+  void bindNextAction();
+
   // Will bind the next key pressed to the action given (via handleKeyEvent)
   void bindKeyToNext(Action);
 
@@ -64,4 +67,5 @@ private:
   std::map<Key,Action> _keymap;
 
   Action _actionAwaitingMap = A_NONE;
+  bool mapNextAction = false;
   };
