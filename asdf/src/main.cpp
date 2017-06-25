@@ -8,7 +8,7 @@
 
 Entity createSquare(World& world, float x, float y)
 {
-  return world.spawnerSystem.createSquare(x,y,{222,22,2,255});
+  return world.spawnerSystem.createRect(x,y,3.0,3.0,{222,22,2,255});
 }
 
 // Sets up initial world entities
@@ -18,17 +18,13 @@ void initWorld(World& world)
   world.playerController.setEntity(s1);
 	assert(world.entityManager.alive(s1));
 
-	Entity s2 = createSquare(world, 70, 40);
-
-	world.entityManager.deleteEntity(s2);
-	assert(!world.entityManager.alive(s2));
-
   world.inputHandler.bindKey(A_RIGHT,InputHandler::Key(SDL_SCANCODE_D,0));
   world.inputHandler.bindKey(A_LEFT,InputHandler::Key(SDL_SCANCODE_A,0));
   world.inputHandler.bindKey(A_DOWN,InputHandler::Key(SDL_SCANCODE_S,0));
   world.inputHandler.bindKey(A_UP,InputHandler::Key(SDL_SCANCODE_W,0));
   world.inputHandler.bindKey(A_SHOOT, InputHandler::Key(SDL_SCANCODE_J,0));
 
+  world.spawnerSystem.spawnInterval = 5000;
   world.spawnerSystem.start();
 }
 
@@ -62,6 +58,7 @@ int main()
       // Event handler
       SDL_Event e;
 
+      // TODO: split up draw time and update time
       Uint32 framesPerSecond = 60;
       Uint32 timePerFrame = 1000 / framesPerSecond;
 

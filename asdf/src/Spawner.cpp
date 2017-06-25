@@ -22,7 +22,10 @@ void Spawner::spawnSquare()
 
   float x = floatInRange(5.0f,50.0f);
   float y = floatInRange(5.0f,50.0f);
-  Entity square = createSquare(x,y,_graphicsSettings->defaultSquareColor);
+
+  float width = 4.0;
+  float height = 4.0;
+  Entity square = createRect(x,y,width,height,_graphicsSettings->defaultSquareColor);
 
   float speed = 5.0f;
   float vx = floatInRange(-1.0f,1.0f);
@@ -31,13 +34,13 @@ void Spawner::spawnSquare()
   _transformSystem->setVelocity(square, velocity);
 }
 
-Entity Spawner::createSquare(float x, float y, SDL_Color color)
+Entity Spawner::createRect(float x, float y, float w, float h, SDL_Color color)
 {
 	Entity e = _entityManager->createEntity();
 
 	assert(_entityManager->alive(e));
   _transformSystem->add(e,glm::vec3(x,y,0.0));
-  _shapeSystem->add(e, { 0,0, 4,4}, color);
-  _collisionSystem->addBoxCollider(e, glm::vec3(4,4,0));
+  _shapeSystem->add(e, { 0,0, (int)w,(int)h}, color);
+  _collisionSystem->addBoxCollider(e, glm::vec3(w,h,0));
   return e;
 }

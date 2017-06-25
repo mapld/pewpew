@@ -98,9 +98,9 @@ public:
             Entity ent2 = _data.entities[index2];
 
             if(!_em->alive(ent1) || !_em->alive(ent2))
-              {
-                continue;
-              }
+            {
+              continue;
+            }
 
             glm::vec3 pos1 = _transformSystem->getPosition(ent1);
             glm::vec3 pos2 = _transformSystem->getPosition(ent2);

@@ -8,6 +8,7 @@
 #include "PlayerController.h"
 #include "Spawner.h"
 #include "Collision.h"
+#include "SpaceCombat.h"
 
 // Contains all of the systems for a game's world. This is game specific but could be reused for multiple levels of a game
 class World
@@ -23,8 +24,9 @@ public:
     transformSystem = Transform();
     collisionSystem = Collision(&transformSystem, &entityManager);
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
-    playerController = PlayerController(&transformSystem);
     spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings, &collisionSystem);
+    combatSystem = SpaceCombat(&spawnerSystem, &transformSystem);
+    playerController = PlayerController(&transformSystem, &combatSystem);
 	}
 
 	void draw();
@@ -42,4 +44,5 @@ public:
   EntityManager entityManager;
   ShapeSystem shapeSystem;
   Spawner spawnerSystem;
+  SpaceCombat combatSystem;
 };
