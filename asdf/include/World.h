@@ -24,9 +24,9 @@ public:
     transformSystem = Transform();
     collisionSystem = Collision(&transformSystem, &entityManager);
     shapeSystem = ShapeSystem(renderer, &graphicsSettings);
-    spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings, &collisionSystem);
-    combatSystem = SpaceCombat(&spawnerSystem, &transformSystem);
+    combatSystem = SpaceCombat(&entityManager, &transformSystem, &shapeSystem, &collisionSystem);
     playerController = PlayerController(&transformSystem, &combatSystem);
+    spawnerSystem = Spawner(&entityManager,&transformSystem,&shapeSystem,&graphicsSettings, &collisionSystem);
 	}
 
 	void draw();

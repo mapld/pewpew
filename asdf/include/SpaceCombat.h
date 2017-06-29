@@ -8,12 +8,16 @@ class SpaceCombat
 public:
 
   SpaceCombat(){}
-  SpaceCombat(Spawner* s, Transform* t){_spawnSystem = s; _transformSystem = t;}
+  SpaceCombat(EntityManager* e, Transform* t, ShapeSystem* s, Collision* c){
+    _entityManager = e; _transformSystem = t; _shapeSystem = s; _collisionSystem = c;
+  }
 
   float bulletSpeed = 40.0f;
   void spawnBullet(float x, float y);
 
 private:
-  Spawner* _spawnSystem;
   Transform* _transformSystem;
+  EntityManager* _entityManager;
+  ShapeSystem* _shapeSystem;
+  Collision* _collisionSystem;
 };
