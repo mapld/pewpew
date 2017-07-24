@@ -13,7 +13,7 @@ struct Entity
 {
 	unsigned id;
 
-  unsigned getIndex() { return (id & INDEX_BITMASK); }
+  unsigned getIndex() { return (id & INDEX_BITMASK) - 1; }
   unsigned getRepeat() { return ( ( id >> INDEX_BITS ) & REPEAT_BITMASK); }
 
 	bool operator==(Entity e) const

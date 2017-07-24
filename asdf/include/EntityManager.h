@@ -20,7 +20,7 @@ public:
 		if (_repeatQueue.size() < MIN_QUEUE_LENGTH)
 		{
 			_repeatCount.push_back(0);
-			id = _repeatCount.size() - 1;
+			id = _repeatCount.size();
       assert(id < INDEX_MAX);
 		}
 		else

@@ -83,12 +83,16 @@ void ShapeSystem::cleanUp(const EntityManager& em)
 {
 	// deletes the components based on whether they are alive. inneficient way to do things, should probably make entity manager supply a list of deleted entities for each frame
 	// there's also the random garbage collection approach but that doesn't work for renderables like this because they need immediate deletion
-	for (std::size_t i = 0; i < _data.n; i++)
+	for (std::size_t i = 0; i < _data.n;)
 	{
 		Entity e = _data.entities[i];
 		if (!em.alive(e))
 		{
 			destroy(e);
 		}
+    else
+      {
+        i++;
+      }
 	}
 }

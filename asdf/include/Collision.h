@@ -65,12 +65,16 @@ public:
   void cleanUp(const EntityManager& em)
   {
     // TODO: update based on a list of deleted entities
-    for(size_t i = 0; i < _data.n; i++)
+    for(size_t i = 0; i < _data.n;)
       {
         Entity e = _data.entities[i];
         if(!em.alive(e))
           {
             destroy(e);
+          }
+        else
+          {
+            i++;
           }
       }
   }

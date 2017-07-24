@@ -14,6 +14,8 @@ void World::update(Uint32 deltaTime)
 
   shapeSystem.updatePositions(transformSystem);
 
+  // this can delete entities so put it after anything that might work on those entities
+  combatSystem.update(deltaTime);
 }
 
 void World::draw()
